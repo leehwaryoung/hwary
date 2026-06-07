@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이화령 | 웹툰 콘텐츠 PD 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0e0d;
+  --paper: #f5f3ee;
+  --paper2: #ece9e2;
+  --accent: #c8392b;
+  --accent2: #1a3a5c;
+  --muted: #7a7060;
+  --line: #d4cfc5;
+  --serif: 'Noto Serif KR', serif;
+  --sans: 'Noto Sans KR', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 48px;
+  background: rgba(245,243,238,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding: 140px 48px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  right: -80px; top: 60px;
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,57,43,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+.hero-tag::before {
+  content: '';
+  display: block; width: 28px; height: 1px;
+  background: var(--accent);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+.hero-desc {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 440px;
+  margin-bottom: 40px;
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+.stat-item {
+  background: var(--paper);
+  padding: 20px 16px;
+  text-align: center;
+}
+.stat-val {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-lbl {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.hero-keywords {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.kw {
+  font-size: 12px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.hero-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.info-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 24px;
+}
+.info-card-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent2);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--paper2);
+  font-size: 13px;
+}
+.info-row:last-child { border-bottom: none; }
+.info-key { color: var(--muted); }
+.info-val { font-weight: 500; color: var(--ink); }
+.info-val.accent { color: var(--accent); font-weight: 700; }
+
+/* ── SECTION ── */
+section { padding: 100px 48px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 20px;
+}
+.section-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+}
+.section-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-left: auto;
+  letter-spacing: 0.03em;
+}
+
+/* ── PROJECT CARD (main) ── */
+.project-main {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  transition: box-shadow 0.3s;
+}
+.project-main:hover { box-shadow: 0 12px 48px rgba(0,0,0,0.08); }
+
+.pm-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 24px;
+  padding: 36px 40px 28px;
+  border-bottom: 1px solid var(--paper2);
+  cursor: pointer;
+  user-select: none;
+}
+.pm-meta { }
+.pm-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.pm-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.pm-type {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.pm-badges {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.badge-genre { background: #eef2f8; color: var(--accent2); }
+.badge-role  { background: #fdf0ef; color: var(--accent); }
+.badge-key   { background: var(--paper2); color: var(--muted); }
+
+.pm-toggle {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.25s;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.project-main.open .pm-toggle {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+  transform: rotate(45deg);
+}
+
+.pm-body {
+  display: none;
+  padding: 36px 40px;
+}
+.project-main.open .pm-body { display: block; }
+
+/* metrics row */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px;
+  background: var(--paper2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+.metric-cell {
+  background: white;
+  padding: 18px 20px;
+}
+.metric-val {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 4px;
+}
+.metric-lbl {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+/* STAR grid */
+.star-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.star-cell {
+  background: white;
+  padding: 24px 26px;
+}
+.star-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent2);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.star-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--paper2);
+}
+.star-text {
+  font-size: 14px;
+  color: #3a3530;
+  line-height: 1.75;
+}
+
+.insight-box {
+  background: var(--paper2);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.insight-box strong { color: var(--ink); font-weight: 600; }
+
+/* ── OTHER WORKS TABLE ── */
+.works-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.works-table th {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  padding: 12px 16px;
+  background: var(--paper2);
+  border-bottom: 1px solid var(--line);
+}
+.works-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.works-table tr:last-child td { border-bottom: none; }
+.works-table tr:hover td { background: rgba(245,243,238,0.6); }
+.work-title-cell { font-weight: 600; color: var(--ink); font-family: var(--serif); }
+.work-period-cell { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+.work-role-cell { color: #4a4540; }
+.work-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: #eef2f8;
+  color: var(--accent2);
+  margin-right: 4px;
+  font-weight: 500;
+}
+
+/* ── SKILLS ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.skill-block {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+}
+.skill-block-title {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--paper2);
+  font-size: 13px;
+}
+.skill-item:last-child { border-bottom: none; }
+.skill-name { color: var(--ink); }
+.skill-level {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--paper2);
+  color: var(--muted);
+}
+.skill-level.high { background: #fdf0ef; color: var(--accent); }
+.skill-level.mid  { background: #eef2f8; color: var(--accent2); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 60px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+}
+.footer-contact { font-size: 13px; color: #9a9080; line-height: 1.9; }
+
+/* ── ANIM ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.55s; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; }
+  section { padding: 60px 24px; }
+  nav { padding: 16px 24px; }
+  .nav-links { gap: 18px; }
+  .star-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">이화령 — 웹툰 PD</a>
+  <ul class="nav-links">
+    <li><a href="#projects">주요 담당작</a></li>
+    <li><a href="#others">기타 담당작</a></li>
+    <li><a href="#skills">역량</a></li>
+    <li><a href="#contact">연락처</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-tag fade-up">웹툰 콘텐츠 PD · 기획 / 프로듀싱 / 운영</div>
+    <h1 class="fade-up delay-1">
+      독자의 다음 화를<br>
+      <em>설계하는</em> PD,<br>
+      이화령
+    </h1>
+    <p class="hero-desc fade-up delay-2">
+      원작 검토부터 작가 매칭, 콘티 피드백, 매출 데이터 관리, IP 확장까지.<br>
+      웹툰 PD 4년 4개월, 기획한 작품이 수치로 말하게 합니다.
+    </p>
+    <div class="hero-stats fade-up delay-3">
+      <div class="stat-item">
+        <span class="stat-val">5,363<span style="font-size:14px">만</span></span>
+        <span class="stat-lbl">오픈 주 최고 매출</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">1억<span style="font-size:14px">+</span></span>
+        <span class="stat-lbl">월 총매출 (권왕환생)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">6<span style="font-size:14px">작</span></span>
+        <span class="stat-lbl">기획·프로듀싱 주담당</span>
+      </div>
+    </div>
+    <div class="hero-keywords fade-up delay-4">
+      <span class="kw">#원작각색</span>
+      <span class="kw">#작가매칭</span>
+      <span class="kw">#콘티피드백</span>
+      <span class="kw">#매출데이터관리</span>
+      <span class="kw">#IP확장</span>
+      <span class="kw">#일본시장분석</span>
+      <span class="kw">#독자보상설계</span>
+      <span class="kw">#Photoshop</span>
+      <span class="kw">#ClipStudio</span>
+    </div>
+  </div>
+  <div class="hero-right fade-up delay-2">
+    <div class="info-card">
+      <div class="info-card-title">Career</div>
+      <div class="info-row"><span class="info-key">재직</span><span class="info-val">엠스토리허브 | 웹툰 PD</span></div>
+      <div class="info-row"><span class="info-key">기간</span><span class="info-val">2022.01 ~ 현재 (4년 4개월)</span></div>
+      <div class="info-row"><span class="info-key">주요 플랫폼</span><span class="info-val">네이버웹툰 · 카카오페이지</span></div>
+      <div class="info-row"><span class="info-key">장르 경험</span><span class="info-val">무협 · 로판 · 개그 · 육아 · 10대</span></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Core Skills</div>
+      <div class="info-row"><span class="info-key">기획 / 각색</span><span class="info-val accent">★★★★★</span></div>
+      <div class="info-row"><span class="info-key">작가 커뮤니케이션</span><span class="info-val accent">★★★★★</span></div>
+      <div class="info-row"><span class="info-key">서비스 운영 / 어드민</span><span class="info-val accent">★★★★☆</span></div>
+      <div class="info-row"><span class="info-key">Photoshop / Clip Studio</span><span class="info-val accent">★★★★☆</span></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Education & Cert</div>
+      <div class="info-row"><span class="info-key">학력</span><span class="info-val">강남대학교 한영문화콘텐츠학과</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN PROJECTS -->
+<section id="projects" style="background: var(--paper2);">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">주요 기획 · 프로듀싱 담당작</h2>
+    <span class="section-sub">2022 – 2026 · 6작품</span>
+  </div>
+
+  <!-- P1: 권왕환생 -->
+  <div class="project-main open" id="p1">
+    <div class="pm-header" onclick="toggle('p1')">
+      <div class="pm-meta">
+        <div class="pm-num">PROJECT 01 · 2025.06 오픈 ~</div>
+        <div class="pm-title">권왕환생</div>
+        <div class="pm-type">무협 회귀물 · 네이버웹툰 일요 연재</div>
+        <div class="pm-badges">
+          <span class="badge badge-genre">#무협회귀물</span>
+          <span class="badge badge-role">#기획총괄</span>
+          <span class="badge badge-role">#원작각색</span>
+          <span class="badge badge-role">#작가매칭</span>
+          <span class="badge badge-role">#콘티피드백</span>
+          <span class="badge badge-key">#남성향2030</span>
+          <span class="badge badge-key">#일요웹툰</span>
+        </div>
+      </div>
+      <div class="pm-toggle">+</div>
+    </div>
+    <div class="pm-body">
+      <div class="metrics-row">
+        <div class="metric-cell"><span class="metric-val">5,000만원대</span><span class="metric-lbl">국내 오픈 주 매출</span></div>
+        <div class="metric-cell"><span class="metric-val">실시간 1위</span><span class="metric-lbl">인기 순위</span></div>
+        <div class="metric-cell"><span class="metric-val">최고 3위</span><span class="metric-lbl">일요웹툰 최고 순위</span></div>
+        <div class="metric-cell"><span class="metric-val">10위권</span><span class="metric-lbl">오픈 이후 안착</span></div>
+        <div class="metric-cell"><span class="metric-val">1억원+</span><span class="metric-lbl">월 총매출</span></div>
+        <div class="metric-cell"><span class="metric-val">+9%</span><span class="metric-lbl">오리지널 에피 투입 후 주 매출</span></div>
+      </div>
+      <div class="star-grid">
+        <div class="star-cell">
+          <div class="star-label">Situation</div>
+          <div class="star-text">원작은 세계관과 캐릭터 설정이 강했으나, 웹툰 1화 기준 셀링 포인트 노출이 늦고 주인공의 목표가 전달되는 시점이 후반부에 몰려 있었음. 남성향 무협 독자 선호를 분석해 작품 방향 재정비가 필요한 상황.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Task</div>
+          <div class="star-text">남성향 무협 독자 선호에 맞춰 1화 셀링 포인트 노출 시점을 전반부로 조정하고, 액션 연출 역량이 있는 작화 작가를 직접 섭외·매칭하는 것이 과제.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Action</div>
+          <div class="star-text">1화 기준 셀링 포인트 노출 시점을 분석해 주인공 목표 노출을 전반부로 조정. 남성향 무협 독자 선호에 맞춰 액션 연출 역량이 있는 작화 작가 섭외·매칭. 인기 캐릭터 오리지널 에피소드 직접 기획·제시.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Result</div>
+          <div class="star-text">국내 오픈 주 5,000만 원대 달성. 실시간 인기 1위. 일요웹툰 최고 3위, 오픈 이후 10위권 안착. 월 총매출 1억 원 이상 유지. 인기 캐릭터 오리지널 에피소드 투입 후 전주 대비 주 매출 약 9% 상승.</div>
+        </div>
+      </div>
+      <div class="insight-box">
+        <strong>PD 인사이트.</strong> 남성향 무협 독자의 핵심 보상은 "패배와 모욕을 딛고 자격을 증명하는 과정"이다. 원작에 그 힘이 있어도 1화 전달이 늦으면 이탈한다. 셀링 포인트 노출 시점을 앞으로 당기는 것만으로 오픈 초반 반응이 달라졌다.
+      </div>
+    </div>
+  </div>
+
+  <!-- P2: 스캔들 메이커 -->
+  <div class="project-main" id="p2">
+    <div class="pm-header" onclick="toggle('p2')">
+      <div class="pm-meta">
+        <div class="pm-num">PROJECT 02 · 2026.03.26 오픈 ~</div>
+        <div class="pm-title">스캔들 메이커가 돌아왔다</div>
+        <div class="pm-type">로맨스 판타지 · 네이버웹툰 수요 연재</div>
+        <div class="pm-badges">
+          <span class="badge badge-genre">#로맨스판타지</span>
+          <span class="badge badge-role">#일본향각색</span>
+          <span class="badge badge-role">#캐릭터재조정</span>
+          <span class="badge badge-role">#러브라인설계</span>
+          <span class="badge badge-key">#일본시장분석</span>
+          <span class="badge badge-key">#후회남상처녀</span>
+        </div>
+      </div>
+      <div class="pm-toggle">+</div>
+    </div>
+    <div class="pm-body">
+      <div class="metrics-row">
+        <div class="metric-cell"><span class="metric-val">3,000만원대</span><span class="metric-lbl">국내 오픈 주 매출</span></div>
+        <div class="metric-cell"><span class="metric-val">실시간 1위</span><span class="metric-lbl">인기 순위</span></div>
+        <div class="metric-cell"><span class="metric-val">약 10% 상승</span><span class="metric-lbl">4월 대비 5월 매출</span></div>
+        <div class="metric-cell"><span class="metric-val">일본 예정</span><span class="metric-lbl">서비스 성과 확인 예정</span></div>
+      </div>
+      <div class="star-grid">
+        <div class="star-cell">
+          <div class="star-label">Situation</div>
+          <div class="star-text">동일 작가 전작의 일본 서비스 성과를 바탕으로, 일본 타깃 전략으로 각색 방향 전환이 필요한 상황. 초반 러브라인 보강과 감정선 중심의 전개 재정비가 과제로 부상.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Task</div>
+          <div class="star-text">일본 타깃 전략에 맞게 각색 방향을 재설정하고, 초반 러브라인을 보강하는 오리지널 장면을 설계하는 것이 핵심 과제.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Action</div>
+          <div class="star-text">일본 타깃 전략으로 각색 방향 전환. 초반 러브라인을 보강하는 오리지널 장면 직접 설계. 감정선 우선·사건 재배치 원칙을 체크리스트로 문서화해 작가와 공유하고 매 회차 피드백 진행.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Result</div>
+          <div class="star-text">국내 오픈 주 3,000만 원대 달성, 실시간 인기 1위. 4월 대비 5월 매출 약 10% 상승세. 일본 서비스 성과는 추가 확인 예정.</div>
+        </div>
+      </div>
+      <div class="insight-box">
+        <strong>PD 인사이트.</strong> 좋은 커뮤니케이션은 작가 의견을 그대로 수용하는 것도, PD 판단을 일방적으로 전달하는 것도 아니다. 창작자의 의도·제작 현실·장르적 방향성을 실행 가능한 기준으로 바꾸고 그 기준을 끝까지 유지하는 것이 PD의 역할이다.
+      </div>
+    </div>
+  </div>
+
+  <!-- P3: 빙의자 -->
+  <div class="project-main" id="p3">
+    <div class="pm-header" onclick="toggle('p3')">
+      <div class="pm-meta">
+        <div class="pm-num">PROJECT 03 · 2023.12 ~ 현재</div>
+        <div class="pm-title">빙의자를 위한 특혜 (시즌 3~)</div>
+        <div class="pm-type">로맨스 판타지 · 카카오페이지</div>
+        <div class="pm-badges">
+          <span class="badge badge-genre">#로맨스판타지</span>
+          <span class="badge badge-role">#이관운영</span>
+          <span class="badge badge-role">#IP확장</span>
+          <span class="badge badge-role">#2차사업</span>
+          <span class="badge badge-key">#팝업스토어</span>
+          <span class="badge badge-key">#콜라보카페</span>
+        </div>
+      </div>
+      <div class="pm-toggle">+</div>
+    </div>
+    <div class="pm-body">
+      <div class="metrics-row">
+        <div class="metric-cell"><span class="metric-val">1715%</span><span class="metric-lbl">텀블벅 달성률</span></div>
+        <div class="metric-cell"><span class="metric-val">팝업·콜라보카페</span><span class="metric-lbl">오프라인 IP 확장</span></div>
+        <div class="metric-cell"><span class="metric-val">BGM·단행본·굿즈</span><span class="metric-lbl">2차 사업 다각화</span></div>
+      </div>
+      <div class="star-grid">
+        <div class="star-cell">
+          <div class="star-label">Situation</div>
+          <div class="star-text">시즌 3부터 담당 이관. 기존 팬덤이 탄탄하게 형성된 작품으로, 원작 팬덤의 신뢰를 유지하면서 동시에 2차 사업 확장이 필요한 시점.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Task</div>
+          <div class="star-text">이관 후 원작 설정과 디자인 레퍼런스를 빠르게 파악해 팬덤 신뢰를 유지하는 운영 기준을 세우고, 유관 부서와 2차 사업을 병행 진행하는 것이 과제.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Action</div>
+          <div class="star-text">이관 후 원작 설정 정리, 디자인 레퍼런스 취합, 원작 팬덤 신뢰 유지 중심 운영 기준 수립. 팝업스토어·콜라보카페·텀블벅·BGM·단행본·굿즈 등 2차 사업 유관 부서 협업 진행.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Result</div>
+          <div class="star-text">텀블벅 달성률 1715% 달성. 팝업스토어·콜라보카페·BGM·단행본·굿즈 등 2차 사업 다수 병행 진행. 원작 팬덤 신뢰를 기반으로 한 운영이 장기 IP 확장의 기반이 됨을 체감.</div>
+        </div>
+      </div>
+      <div class="insight-box">
+        <strong>PD 인사이트.</strong> 장기 연재 작품의 팬덤은 원고만으로 유지되지 않는다. 원작 팬덤의 기대를 파악하고, 연재 흐름에 맞게 접점을 넓혀가는 운영이 독자 신뢰를 지속시킨다.
+      </div>
+    </div>
+  </div>
+
+  <!-- P4: 전전긍긍 -->
+  <div class="project-main" id="p4">
+    <div class="pm-header" onclick="toggle('p4')">
+      <div class="pm-meta">
+        <div class="pm-num">PROJECT 04 · 2023.01 ~ 2025.10 완결</div>
+        <div class="pm-title">전전긍긍 마교교주</div>
+        <div class="pm-type">개그 무협 · 네이버웹툰 매일플러스 · 2023.01 ~ 2025.10 완결</div>
+        <div class="pm-badges">
+          <span class="badge badge-genre">#개그무협</span>
+          <span class="badge badge-role">#기획</span>
+          <span class="badge badge-role">#작가섭외</span>
+          <span class="badge badge-role">#초반각색</span>
+          <span class="badge badge-key">#40대남성독자</span>
+          
+        </div>
+      </div>
+      <div class="pm-toggle">+</div>
+    </div>
+    <div class="pm-body">
+      <div class="metrics-row">
+        <div class="metric-cell"><span class="metric-val">10만+</span><span class="metric-lbl">관심 수 (네이버웹툰)</span></div>
+      </div>
+      <div class="star-grid">
+        <div class="star-cell">
+          <div class="star-label">Situation</div>
+          <div class="star-text">무협 작품이 증가하는 시기, 개그 무협이라는 차별화된 소재로 기획 기회 발생. 장르 퀄리티를 확보하면서도 개그 톤을 살릴 수 있는 작화 작가 발굴이 필요.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Task</div>
+          <div class="star-text">개그 무협 장르에서 독자 신뢰를 얻을 수 있는 작화 퀄리티를 확보하고, 개그 톤과 연출 방향을 초반부터 안정적으로 잡는 것이 과제.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Action</div>
+          <div class="star-text">장르 퀄리티 확보가 가능한 작화 작가 직접 섭외. 개그 톤 및 연출 방향 피드백 집중 진행.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Result</div>
+          <div class="star-text">네이버웹툰 관심 수 10만 명 이상. 이 경험을 통해 소재의 재미와 독자의 결제 동기를 분리해서 기획하는 관점을 갖게 됐다.</div>
+        </div>
+      </div>
+      <div class="insight-box">
+        <strong>PD 인사이트.</strong> 개그 단일 소구는 결제 전환을 만들기 어렵다. 개그는 유입 장치지 결제 장치가 아니다. 이후 기획에서 '개그'를 소재로 쓸 때 결제를 만드는 다른 축(세계관·관계성·성장)을 반드시 병행 설계하게 됐다.
+      </div>
+    </div>
+  </div>
+
+  <!-- P5: 흑막 -->
+  <div class="project-main" id="p5">
+    <div class="pm-header" onclick="toggle('p5')">
+      <div class="pm-meta">
+        <div class="pm-num">PROJECT 05 · 2022.10 ~ 2025.12 완결</div>
+        <div class="pm-title">흑막과의 육아일기</div>
+        <div class="pm-type">로맨스 판타지 · 카카오페이지 · 2022.10 ~ 2025.12 완결</div>
+        <div class="pm-badges">
+          <span class="badge badge-genre">#육아로맨스판타지</span>
+          <span class="badge badge-role">#작가안정화</span>
+          <span class="badge badge-role">#스튜디오관리</span>
+          <span class="badge badge-role">#커뮤니케이션구조설계</span>
+          <span class="badge badge-key">#카카오페이지</span>
+        </div>
+      </div>
+      <div class="pm-toggle">+</div>
+    </div>
+    <div class="pm-body">
+      <div class="metrics-row">
+        <div class="metric-cell"><span class="metric-val">1,020만뷰</span><span class="metric-lbl">누적 뷰 (카카오페이지)</span></div>
+        <div class="metric-cell"><span class="metric-val">100만뷰</span><span class="metric-lbl">오픈 당일</span></div>
+        <div class="metric-cell"><span class="metric-val">실시간 1위</span><span class="metric-lbl">오픈 당시 랭킹</span></div>
+        <div class="metric-cell"><span class="metric-val">2,000만원대</span><span class="metric-lbl">월 매출</span></div>
+      </div>
+      <div class="star-grid">
+        <div class="star-cell">
+          <div class="star-label">Situation</div>
+          <div class="star-text">로판 육아물 붐 시기. 작품은 있으나 작가와 원활한 커뮤니케이션 체계 수립이 필요한 상황.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Task</div>
+          <div class="star-text">작가와의 원활한 커뮤니케이션 체계를 먼저 잡는 것이 과제. 작가의 의도와 제작 현실이 같은 기준 안에서 맞물리도록 조율.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Action</div>
+          <div class="star-text">작가의 기존 요청·레퍼런스를 처음부터 재확인. 지켜야 할 톤·제작진 선제 확인 포인트·일정 합의 포인트를 구분해 양측에 공유. 작업 분업화로 작가 부담 경감. 스튜디오 퀄리티 피드백 구조 정비.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Result</div>
+          <div class="star-text">카카오페이지 오픈 당일 100만 뷰, 실시간 랭킹 1위. 현재 누적 1,020만 뷰 달성. 월 매출 2,000만 원대. 커뮤니케이션 구조가 안정되면 오픈 준비 자체가 달라진다는 점을 체감했다.</div>
+        </div>
+      </div>
+      <div class="insight-box">
+        <strong>PD 인사이트.</strong> 창작자 커뮤니케이션에서 가장 중요한 것은 양쪽 의견을 전달하는 것이 아니라 같은 기준을 만드는 것이다. 기준이 맞으면 갈등이 아니라 협업이 된다.
+      </div>
+    </div>
+  </div>
+
+  <!-- P6: 문샤크 -->
+  <div class="project-main" id="p6">
+    <div class="pm-header" onclick="toggle('p6')">
+      <div class="pm-meta">
+        <div class="pm-num">PROJECT 06 · 2022.04 ~ 2025.06 완결</div>
+        <div class="pm-title">문샤크</div>
+        <div class="pm-type">10대 학원 로맨스 · 오리지널 IP · 핑크퐁 컴퍼니 협업 · 네이버시리즈 선독점 · 전사 유통</div>
+        <div class="pm-badges">
+          <span class="badge badge-genre">#오리지널IP</span>
+          <span class="badge badge-role">#그래픽피드백</span>
+          <span class="badge badge-role">#외부협업</span>
+          <span class="badge badge-role">#숏폼연계</span>
+          <span class="badge badge-key">#핑크퐁협업</span>
+          <span class="badge badge-key">#10대타깃</span>
+          <span class="badge badge-key">#무빙툰</span>
+        </div>
+      </div>
+      <div class="pm-toggle">+</div>
+    </div>
+    <div class="pm-body">
+      <div class="metrics-row">
+        <div class="metric-cell"><span class="metric-val">영상 IP 지속</span><span class="metric-lbl">현재까지 유입 발생</span></div>
+        <div class="metric-cell"><span class="metric-val">숏폼 연계</span><span class="metric-lbl">영상-웹툰 구조 합의</span></div>
+        <div class="metric-cell"><span class="metric-val">무빙툰</span><span class="metric-lbl">추가 포맷 진행</span></div>
+      </div>
+      <div class="star-grid">
+        <div class="star-cell">
+          <div class="star-label">Situation</div>
+          <div class="star-text">핑크퐁 컴퍼니와의 합작 오리지널 기획. 10대 독자 타깃에 맞는 상업적 비주얼 톤을 잡고, 웹툰과 숏폼 영상을 연계하는 구조를 설계하는 것이 핵심 과제였음.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Task</div>
+          <div class="star-text">원고 산출물의 비주얼 톤을 10대 타깃 상업 기준에 맞게 정비하고, 핑크퐁과 숏폼 연계 구조를 합의해 IP가 웹툰 연재 이후에도 지속될 수 있는 기반을 마련.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Action</div>
+          <div class="star-text">원고 산출물 검수와 비주얼 톤 피드백을 통해 10대 타깃에 맞는 상업적 톤 정리. 핑크퐁과 숏폼 연계 구조 합의.</div>
+        </div>
+        <div class="star-cell">
+          <div class="star-label">Result</div>
+          <div class="star-text">현재까지 영상 유입 매출 지속 발생. 무빙툰 진행 중. 웹툰 연재 종료 후에도 IP가 영상 포맷으로 살아있을 수 있음을 확인.</div>
+        </div>
+      </div>
+      <div class="insight-box">
+        <strong>PD 인사이트.</strong> IP 확장을 염두에 둔 작품은 초반부터 한눈에 기억되는 캐릭터성, 숏폼으로 잘라내도 전달되는 행동 패턴이 필요하다. 포맷을 넘어 IP를 살리는 설계는 기획 단계부터 시작된다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER WORKS -->
+<section id="others">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">기타 담당작 (연도별 최신순)</h2>
+    <span class="section-sub">운영 · 이관 · 서포트 담당</span>
+  </div>
+  <table class="works-table">
+    <thead>
+      <tr>
+        <th style="width:60px">연도</th>
+        <th style="width:200px">작품명</th>
+        <th style="width:180px">담당 기간</th>
+        <th>주요 역할 / 특이사항</th>
+        <th style="width:100px">플랫폼</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-family:var(--mono);font-size:12px;color:var(--muted)">2024</td>
+        <td class="work-title-cell">재혼황후 (시즌 4~)</td>
+        <td class="work-period-cell">2024.01 ~ 현재</td>
+        <td class="work-role-cell">
+          <span class="work-badge">이관운영</span>
+          운영 인계 후 장기 연재 안정화 관리. 국내 로판 대표 IP 운영 경험.
+        </td>
+        <td style="font-size:12px;color:var(--muted)">네이버웹툰</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--mono);font-size:12px;color:var(--muted)">2023</td>
+        <td class="work-title-cell">용사님 거기로 가시면 안 돼요</td>
+        <td class="work-period-cell">2023.09 ~ 2025.03</td>
+        <td class="work-role-cell">
+          <span class="work-badge">작가전담</span>
+          정권 작가 전담 담당. 기획부터 완결까지 전 과정 운영.
+        </td>
+        <td style="font-size:12px;color:var(--muted)">리디북스 선독점 · 전사 유통</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--mono);font-size:12px;color:var(--muted)">2022</td>
+        <td class="work-title-cell">하렘의 남자들 (시즌 2·3)</td>
+        <td class="work-period-cell">2022.10 ~ 2025.01</td>
+        <td class="work-role-cell">
+          <span class="work-badge">멀티시즌</span>
+          시즌 2·3 연속 담당. 멀티 시즌 운영 및 팬덤 관리.
+        </td>
+        <td style="font-size:12px;color:var(--muted)">네이버웹툰</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--mono);font-size:12px;color:var(--muted)">2022</td>
+        <td class="work-title-cell">더는 못 본 척하지 않기로 했다</td>
+        <td class="work-period-cell">2022.02 ~ 2023.12<br><span style="font-size:11px;color:var(--muted)">39~112화</span></td>
+        <td class="work-role-cell">
+          <span class="work-badge">중도인계</span>
+          중반 이관 후 74화 분량 안정적 운영. 이관 작품 셋업 및 작가 신뢰 구축 경험.
+        </td>
+        <td style="font-size:12px;color:var(--muted)">카카오페이지</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--mono);font-size:12px;color:var(--muted)">2022</td>
+        <td class="work-title-cell">이레인의 사정</td>
+        <td class="work-period-cell">2022.01 ~ 2023.05<br><span style="font-size:11px;color:var(--muted)">론칭 ~ 완결</span></td>
+        <td class="work-role-cell">
+          <span class="work-badge">론칭~완결</span>
+          <span class="work-badge">작가관리</span>
+          론칭부터 완결까지 전 과정 담당. 초기 셋업·마감 관리·작가 커뮤니케이션 전담.
+        </td>
+        <td style="font-size:12px;color:var(--muted)">카카오페이지</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--mono);font-size:12px;color:var(--muted)">2022</td>
+        <td class="work-title-cell">집밖은 위험해 (시즌 2~완결)</td>
+        <td class="work-period-cell">2022.01 ~ 2023.05</td>
+        <td class="work-role-cell">
+          <span class="work-badge">시즌인계</span>
+          시즌 2 이관 후 완결까지 운영. 장기 연재 작품의 완결부 운영 경험.
+        </td>
+        <td style="font-size:12px;color:var(--muted)">카카오페이지</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--mono);font-size:12px;color:var(--muted)">2022</td>
+        <td class="work-title-cell">뉴로맨스</td>
+        <td class="work-period-cell">2022.03 ~ 2023.07</td>
+        <td class="work-role-cell">
+          <span class="work-badge">작가전담</span>
+          정권 작가 전담 담당. 완결까지 전 과정 운영.
+        </td>
+        <td style="font-size:12px;color:var(--muted)">봄툰 선독점 · 전사 유통</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background: var(--paper2);">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">역량 및 스킬셋</h2>
+    <span class="section-sub">ATS 키워드 기준 정리</span>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-block">
+      <div class="skill-block-title">기획 · 프로듀싱</div>
+      <div class="skill-item"><span class="skill-name">원작 검토 (웹소설·출판물)</span><span class="skill-level high">핵심역량</span></div>
+      <div class="skill-item"><span class="skill-name">작가 매칭 및 섭외</span><span class="skill-level high">핵심역량</span></div>
+      <div class="skill-item"><span class="skill-name">아웃라인 기획 개발</span><span class="skill-level high">핵심역량</span></div>
+      <div class="skill-item"><span class="skill-name">콘티 피드백 / 글콘티 작성</span><span class="skill-level high">핵심역량</span></div>
+      <div class="skill-item"><span class="skill-name">원고 및 산출물 제작 프로듀싱</span><span class="skill-level high">핵심역량</span></div>
+      <div class="skill-item"><span class="skill-name">장르별 독자 보상 구조 설계</span><span class="skill-level high">핵심역량</span></div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">서비스 운영</div>
+      <div class="skill-item"><span class="skill-name">요일별 마감 확인 및 어드민 관리</span><span class="skill-level mid">실무숙련</span></div>
+      <div class="skill-item"><span class="skill-name">회차 서비스 노출 확인</span><span class="skill-level mid">실무숙련</span></div>
+      <div class="skill-item"><span class="skill-name">프로모션 요청 및 회차별 셀링 포인트 전달</span><span class="skill-level mid">실무숙련</span></div>
+      <div class="skill-item"><span class="skill-name">계약서 작성 및 검토</span><span class="skill-level mid">실무숙련</span></div>
+      <div class="skill-item"><span class="skill-name">정산·제작비·외주비·매출 데이터 관리</span><span class="skill-level mid">실무숙련</span></div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">툴 / 기술</div>
+      <div class="skill-item"><span class="skill-name">Photoshop</span><span class="skill-level high">업무 활용 가능</span></div>
+      <div class="skill-item"><span class="skill-name">Clip Studio</span><span class="skill-level high">업무 활용 가능</span></div>
+      <div class="skill-item"><span class="skill-name">Excel (매출·정산 관리)</span><span class="skill-level mid">실무숙련</span></div>
+      
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">커뮤니케이션 · IP 확장</div>
+      <div class="skill-item"><span class="skill-name">작가 커뮤니케이션 및 매니지먼트</span><span class="skill-level high">핵심역량</span></div>
+      <div class="skill-item"><span class="skill-name">기획·디자인·마케팅 유관부서 협업</span><span class="skill-level high">핵심역량</span></div>
+      <div class="skill-item"><span class="skill-name">스튜디오 퀄리티 관리</span><span class="skill-level mid">실무숙련</span></div>
+      <div class="skill-item"><span class="skill-name">2차 사업 (팝업·콜라보·굿즈) 협업</span><span class="skill-level mid">실무숙련</span></div>
+      <div class="skill-item"><span class="skill-name">숏폼·무빙툰 IP 연계 기획</span><span class="skill-level mid">실무경험</span></div>
+      <div class="skill-item"><span class="skill-name">일본 시장 특성 분석 및 현지화 각색</span><span class="skill-level mid">실무경험</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer id="contact">
+  <div>
+    <div class="footer-name">이화령</div>
+    <div style="font-size:13px;color:#6a6050;margin-top:6px;">웹툰 콘텐츠 PD · 기획 / 프로듀싱 / 운영</div>
+  </div>
+  <div class="footer-contact">
+    <div>📧 p0425wer@gmail.com</div>
+    <div>📞 010-4081-2104</div>
+    <div style="margin-top:8px;color:#5a5040;font-size:12px;">엠스토리허브 웹툰 PD 2022.01 ~ 현재</div>
+  </div>
+</footer>
+
+<script>
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+// 첫 번째만 open 상태로 시작 (이미 HTML에서 처리)
+// IntersectionObserver로 fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'none';
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.project-main, .skill-block, .info-card').forEach(el => {
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
